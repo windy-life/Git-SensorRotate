@@ -1,0 +1,89 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<asmv1:assembly xsi:schemaLocation="urn:schemas-microsoft-com:asm.v1 assembly.adaptive.xsd" manifestVersion="1.0" xmlns:asmv1="urn:schemas-microsoft-com:asm.v1" xmlns="urn:schemas-microsoft-com:asm.v2" xmlns:asmv2="urn:schemas-microsoft-com:asm.v2" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:co.v1="urn:schemas-microsoft-com:clickonce.v1" xmlns:asmv3="urn:schemas-microsoft-com:asm.v3" xmlns:dsig="http://www.w3.org/2000/09/xmldsig#" xmlns:co.v2="urn:schemas-microsoft-com:clickonce.v2">
+  <asmv1:assemblyIdentity name="Sensor_Rotate.exe" version="1.0.0.0" publicKeyToken="1471fdaceb1936d9" language="neutral" processorArchitecture="msil" type="win32" />
+  <application />
+  <entryPoint>
+    <assemblyIdentity name="Sensor_Rotate" version="1.0.0.0" language="neutral" processorArchitecture="msil" />
+    <commandLine file="Sensor_Rotate.exe" parameters="" />
+  </entryPoint>
+  <trustInfo>
+    <security>
+      <applicationRequestMinimum>
+        <PermissionSet Unrestricted="true" ID="Custom" SameSite="site" />
+        <defaultAssemblyRequest permissionSetReference="Custom" />
+      </applicationRequestMinimum>
+      <requestedPrivileges xmlns="urn:schemas-microsoft-com:asm.v3">
+        <!--
+          UAC 清单选项
+          如果要更改 Windows 用户帐户控制级别，请用以下节点之一替换
+          requestedExecutionLevel 节点。
+
+        <requestedExecutionLevel  level="asInvoker" uiAccess="false" />
+        <requestedExecutionLevel  level="requireAdministrator" uiAccess="false" />
+        <requestedExecutionLevel  level="highestAvailable" uiAccess="false" />
+
+          如果要利用文件和注册表虚拟化提供
+          向后兼容性，请删除 requestedExecutionLevel 节点。
+    -->
+        <requestedExecutionLevel level="asInvoker" uiAccess="false" />
+      </requestedPrivileges>
+    </security>
+  </trustInfo>
+  <dependency>
+    <dependentOS>
+      <osVersionInfo>
+        <os majorVersion="5" minorVersion="1" buildNumber="2600" servicePackMajor="0" />
+      </osVersionInfo>
+    </dependentOS>
+  </dependency>
+  <dependency>
+    <dependentAssembly dependencyType="preRequisite" allowDelayedBinding="true">
+      <assemblyIdentity name="Microsoft.Windows.CommonLanguageRuntime" version="4.0.30319.0" />
+    </dependentAssembly>
+  </dependency>
+  <dependency>
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="RotateDll.dll" size="12288">
+      <assemblyIdentity name="RotateDll" version="1.0.0.0" language="neutral" processorArchitecture="msil" />
+      <hash>
+        <dsig:Transforms>
+          <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+        </dsig:Transforms>
+        <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
+        <dsig:DigestValue>rB35zyFBxXzEUAR6aYcQGhnLbag+HQfREup9D4zHRMg=</dsig:DigestValue>
+      </hash>
+    </dependentAssembly>
+  </dependency>
+  <dependency>
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="Sensor_Rotate.exe" size="724392">
+      <assemblyIdentity name="Sensor_Rotate" version="1.0.0.0" language="neutral" processorArchitecture="msil" />
+      <hash>
+        <dsig:Transforms>
+          <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+        </dsig:Transforms>
+        <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
+        <dsig:DigestValue>1coqznIS6KRwmK31qUN8PSTtVurKtkvU5gCTL+SK63k=</dsig:DigestValue>
+      </hash>
+    </dependentAssembly>
+  </dependency>
+  <dependency>
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="WeifenLuo.WinFormsUI.Docking.dll" size="417792">
+      <assemblyIdentity name="WeifenLuo.WinFormsUI.Docking" version="2.2.2864.18696" publicKeyToken="D481317C817CEC47" language="neutral" processorArchitecture="msil" />
+      <hash>
+        <dsig:Transforms>
+          <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+        </dsig:Transforms>
+        <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
+        <dsig:DigestValue>nSGvfkY8YGi8w5YAh3TXAClvn5RiBhOJiSiTUT4s2zo=</dsig:DigestValue>
+      </hash>
+    </dependentAssembly>
+  </dependency>
+  <file name="Sensor_Rotate.exe.config" size="2871">
+    <hash>
+      <dsig:Transforms>
+        <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+      </dsig:Transforms>
+      <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
+      <dsig:DigestValue>2N83mEy8SBjMmHLiR0XQDN6F7vh0vm/ljQmXGanvMoM=</dsig:DigestValue>
+    </hash>
+  </file>
+<publisherIdentity name="CN=afei-PC\afei" issuerKeyHash="a001026a7e0bfcea1f8f0304d9c1f16d0fd6bdd9" /><Signature Id="StrongNameSignature" xmlns="http://www.w3.org/2000/09/xmldsig#"><SignedInfo><CanonicalizationMethod Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#" /><SignatureMethod Algorithm="http://www.w3.org/2000/09/xmldsig#rsa-sha256" /><Reference URI=""><Transforms><Transform Algorithm="http://www.w3.org/2000/09/xmldsig#enveloped-signature" /><Transform Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#" /></Transforms><DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" /><DigestValue>nQE9/cZp1XDZEzLDgxmqOUGZ6I+5d5gN6eSmreGUp28=</DigestValue></Reference></SignedInfo><SignatureValue>ckUCN18POnfQmmtaxMuEMEyp0R/y8/kselEyBencEMKex0cdKwJNl5v9JXPTnKsFNnySIpy4PBV8eDX1GIbG3d8SCEnIJynE/+WogJlId11/fQoxELpJmymhn8MZwkXARlqPmMPuHPM3kYoBzJtWz22fx6nwoN6NXDq0pbY0bOk=</SignatureValue><KeyInfo Id="StrongNameKeyInfo"><KeyValue><RSAKeyValue><Modulus>3LsIjI0BvcK5qrkJM2fK/co/bo6A3ObknqWpZLtdZKKzytkdbFo8Kpoc6ibVU0NFmnNL3OnI67xt3nek2d1woZMUuaJ35D/cM34ypMyykgv+BW1QJA+BP1gL3XsS2sqXevucwm8iGC/KOYiF2skfxFfDcmyyYH43UxW67BHpRuU=</Modulus><Exponent>AQAB</Exponent></RSAKeyValue></KeyValue><msrel:RelData xmlns:msrel="http://schemas.microsoft.com/windows/rel/2005/reldata"><r:license xmlns:r="urn:mpeg:mpeg21:2003:01-REL-R-NS" xmlns:as="http://schemas.microsoft.com/windows/pki/2005/Authenticode"><r:grant><as:ManifestInformation Hash="6fa794e1ada6e4e90d9877b98fe8994139aa1983c33213d970d569c6fd3d019d" Description="" Url=""><as:assemblyIdentity name="Sensor_Rotate.exe" version="1.0.0.0" publicKeyToken="1471fdaceb1936d9" language="neutral" processorArchitecture="msil" type="win32" /></as:ManifestInformation><as:SignedBy /><as:AuthenticodePublisher><as:X509SubjectName>CN=afei-PC\afei</as:X509SubjectName></as:AuthenticodePublisher></r:grant><r:issuer><Signature Id="AuthenticodeSignature" xmlns="http://www.w3.org/2000/09/xmldsig#"><SignedInfo><CanonicalizationMethod Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#" /><SignatureMethod Algorithm="http://www.w3.org/2000/09/xmldsig#rsa-sha256" /><Reference URI=""><Transforms><Transform Algorithm="http://www.w3.org/2000/09/xmldsig#enveloped-signature" /><Transform Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#" /></Transforms><DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" /><DigestValue>4SSbUViRXfAc6j60mRfuYpv4cyIAA/Opu6sMp910i3M=</DigestValue></Reference></SignedInfo><SignatureValue>24aF1jZyb2GFW5h8Ij1IwN/m+3Eu9G56E3BHqsHK5DyMKNVeBhTrDcl6/znOhwNraap2AGI3zOxBTbT1+VoS4cKFlY7fJFP9ydYoqieNWbVfhHCbSdgx/FebmNygDtw7AAu1sixl9usQI+dSWfWO6NVp0Sse2ISVyPY0rgQcWlA=</SignatureValue><KeyInfo><KeyValue><RSAKeyValue><Modulus>3LsIjI0BvcK5qrkJM2fK/co/bo6A3ObknqWpZLtdZKKzytkdbFo8Kpoc6ibVU0NFmnNL3OnI67xt3nek2d1woZMUuaJ35D/cM34ypMyykgv+BW1QJA+BP1gL3XsS2sqXevucwm8iGC/KOYiF2skfxFfDcmyyYH43UxW67BHpRuU=</Modulus><Exponent>AQAB</Exponent></RSAKeyValue></KeyValue><X509Data><X509Certificate>MIIByTCCATKgAwIBAgIQHJ5kERwlXZ5GIjkCeQt8tDANBgkqhkiG9w0BAQsFADAjMSEwHwYDVQQDHhgAYQBmAGUAaQAtAFAAQwBcAGEAZgBlAGkwHhcNMTcwMzIzMDc1ODQ4WhcNMTgwMzIzMTM1ODQ4WjAjMSEwHwYDVQQDHhgAYQBmAGUAaQAtAFAAQwBcAGEAZgBlAGkwgZ8wDQYJKoZIhvcNAQEBBQADgY0AMIGJAoGBANy7CIyNAb3Cuaq5CTNnyv3KP26OgNzm5J6lqWS7XWSis8rZHWxaPCqaHOom1VNDRZpzS9zpyOu8bd53pNndcKGTFLmid+Q/3DN+MqTMspIL/gVtUCQPgT9YC917EtrKl3r7nMJvIhgvyjmIhdrJH8RXw3JssmB+N1MVuuwR6UblAgMBAAEwDQYJKoZIhvcNAQELBQADgYEAsOhyOEScBge8m0/A5dOhcU4Fqe6TbuQwx09Qz3gfKmOWsDF0wBonrrRUaVYAw+DyxNLDE3V/c5Ihr3eKFFhFCAf08KFTIZQRMqgIxBTV1IUJ/E+Qnmd2AaAExeR6ydDj9LFxBO7xWzZct8Y4G71xrAlY8BSX96WdCuZ7m5hYCq0=</X509Certificate></X509Data></KeyInfo></Signature></r:issuer></r:license></msrel:RelData></KeyInfo></Signature></asmv1:assembly>

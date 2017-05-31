@@ -12,9 +12,27 @@
     <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <TargetFrameworkProfile />
+    <PublishUrl>C:\Users\afei\Desktop\Sensor_Rotate\转台传感器标定软件\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Disk</InstallFrom>
+    <UpdateEnabled>false</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <ApplicationRevision>1</ApplicationRevision>
+    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <PublishWizardCompleted>true</PublishWizardCompleted>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
+    <BootstrapperComponentsLocation>Relative</BootstrapperComponentsLocation>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
-    <PlatformTarget>AnyCPU</PlatformTarget>
+    <PlatformTarget>x86</PlatformTarget>
     <DebugSymbols>true</DebugSymbols>
     <DebugType>full</DebugType>
     <Optimize>false</Optimize>
@@ -22,6 +40,8 @@
     <DefineConstants>DEBUG;TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>true</Prefer32Bit>
+    <DocumentationFile>bin\Debug\Sensor_Rotate.XML</DocumentationFile>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
     <PlatformTarget>AnyCPU</PlatformTarget>
@@ -31,10 +51,54 @@
     <DefineConstants>TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ManifestCertificateThumbprint>F8BEF95CD3E6DAB5DFBEC62C2CA82C3E498CD7CE</ManifestCertificateThumbprint>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ManifestKeyFile>Sensor_Rotate_TemporaryKey.pfx</ManifestKeyFile>
+  </PropertyGroup>
+  <PropertyGroup>
+    <GenerateManifests>true</GenerateManifests>
+  </PropertyGroup>
+  <PropertyGroup>
+    <SignManifests>false</SignManifests>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationIcon>Ironman_Hand.ico</ApplicationIcon>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|x86'">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>bin\x86\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <DocumentationFile>bin\Debug\Sensor_Rotate.XML</DocumentationFile>
+    <DebugType>full</DebugType>
+    <PlatformTarget>x86</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+    <Prefer32Bit>true</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|x86'">
+    <OutputPath>bin\x86\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <Optimize>true</Optimize>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>x86</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="NPOI">
+      <HintPath>Net40\NPOI.dll</HintPath>
+    </Reference>
+    <Reference Include="RotateDll, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>.\RotateDll.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Windows.Forms.DataVisualization" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -44,16 +108,152 @@
     <Reference Include="System.Net.Http" />
     <Reference Include="System.Windows.Forms" />
     <Reference Include="System.Xml" />
+    <Reference Include="WeifenLuo.WinFormsUI.Docking">
+      <HintPath>.\WeifenLuo.WinFormsUI.Docking.dll</HintPath>
+    </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Form1.cs">
+    <Compile Include="Class_Comm.cs" />
+    <Compile Include="CommandsToSend.cs" />
+    <Compile Include="Form_Communicate.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Form1.Designer.cs">
-      <DependentUpon>Form1.cs</DependentUpon>
+    <Compile Include="Form_Communicate.Designer.cs">
+      <DependentUpon>Form_Communicate.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Form_DataShow.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form_DataShow.Designer.cs">
+      <DependentUpon>Form_DataShow.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Form_ReadWritePara.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form_ReadWritePara.Designer.cs">
+      <DependentUpon>Form_ReadWritePara.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Form_Rotate303.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form_Rotate303.Designer.cs">
+      <DependentUpon>Form_Rotate303.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Form_TCalibration.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form_TCalibration.Designer.cs">
+      <DependentUpon>Form_TCalibration.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Form_TCM.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form_TCM.Designer.cs">
+      <DependentUpon>Form_TCM.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Form_WordConfig.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form_WordConfig.Designer.cs">
+      <DependentUpon>Form_WordConfig.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Form_XCalibration.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form_XCalibration.Designer.cs">
+      <DependentUpon>Form_XCalibration.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Form_XCalibration_D30.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form_XCalibration_D30.Designer.cs">
+      <DependentUpon>Form_XCalibration_D30.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Form_YCalibration.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form_YCalibration.Designer.cs">
+      <DependentUpon>Form_YCalibration.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Mainform.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Mainform.Designer.cs">
+      <DependentUpon>Mainform.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Form_Rotate303Control.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form_Rotate303Control.Designer.cs">
+      <DependentUpon>Form_Rotate303Control.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Form_ProductTree.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form_ProductTree.Designer.cs">
+      <DependentUpon>Form_ProductTree.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Form_Rotate303Settings.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form_Rotate303Settings.Designer.cs">
+      <DependentUpon>Form_Rotate303Settings.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Resource1.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resource1.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Form_YCalibration_D30.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form_YCalibration_D30.Designer.cs">
+      <DependentUpon>Form_YCalibration_D30.cs</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="Form_Communicate.resx">
+      <DependentUpon>Form_Communicate.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form_DataShow.resx">
+      <DependentUpon>Form_DataShow.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form_ReadWritePara.resx">
+      <DependentUpon>Form_ReadWritePara.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form_Rotate303.resx">
+      <DependentUpon>Form_Rotate303.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form_TCalibration.resx">
+      <DependentUpon>Form_TCalibration.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form_TCM.resx">
+      <DependentUpon>Form_TCM.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form_WordConfig.resx">
+      <DependentUpon>Form_WordConfig.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form_XCalibration.resx">
+      <DependentUpon>Form_XCalibration.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form_XCalibration_D30.resx">
+      <DependentUpon>Form_XCalibration_D30.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form_YCalibration.resx">
+      <DependentUpon>Form_YCalibration.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Mainform.resx">
+      <DependentUpon>Mainform.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form_Rotate303Control.resx">
+      <DependentUpon>Form_Rotate303Control.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form_ProductTree.resx">
+      <DependentUpon>Form_ProductTree.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form_Rotate303Settings.resx">
+      <DependentUpon>Form_Rotate303Settings.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
@@ -62,7 +262,15 @@
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
     </Compile>
+    <EmbeddedResource Include="Resource1.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resource1.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form_YCalibration_D30.resx">
+      <DependentUpon>Form_YCalibration_D30.cs</DependentUpon>
+    </EmbeddedResource>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -72,9 +280,132 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
+    <None Include="Sensor_Rotate_TemporaryKey.pfx" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="icon\connect.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="icon\disconnect.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="icon\Angle.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="icon\Compass.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="icon\config_set.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="icon\Control_Panel.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="icon\PowerOff.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="icon\PowerOn.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="icon\Start.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="icon\Stop.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="icon\tree.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="icon\闭合.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="icon\红圆.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="icon\黄圆.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="icon\急停.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="icon\绿圆.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="icon\设置.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="icon\闲置.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="icon\寻零.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="icon\配置通讯.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="HelpIndex\读写参数.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include=".NETFramework,Version=v4.5.2">
+      <Visible>False</Visible>
+      <ProductName>Microsoft .NET Framework 4.5.2 %28x86 和 x64%29</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Ironman_Hand.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <COMReference Include="Microsoft.Office.Core">
+      <Guid>{2DF8D04C-5BFA-101B-BDE5-00AA0044DE52}</Guid>
+      <VersionMajor>2</VersionMajor>
+      <VersionMinor>8</VersionMinor>
+      <Lcid>0</Lcid>
+      <WrapperTool>primary</WrapperTool>
+      <Isolated>False</Isolated>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </COMReference>
+    <COMReference Include="Microsoft.Office.Interop.Excel">
+      <Guid>{00020813-0000-0000-C000-000000000046}</Guid>
+      <VersionMajor>1</VersionMajor>
+      <VersionMinor>9</VersionMinor>
+      <Lcid>0</Lcid>
+      <WrapperTool>primary</WrapperTool>
+      <Isolated>False</Isolated>
+      <EmbedInteropTypes>False</EmbedInteropTypes>
+    </COMReference>
+    <COMReference Include="Microsoft.Office.Interop.Word">
+      <Guid>{00020905-0000-0000-C000-000000000046}</Guid>
+      <VersionMajor>8</VersionMajor>
+      <VersionMinor>7</VersionMinor>
+      <Lcid>0</Lcid>
+      <WrapperTool>primary</WrapperTool>
+      <Isolated>False</Isolated>
+      <EmbedInteropTypes>False</EmbedInteropTypes>
+    </COMReference>
+    <COMReference Include="VBIDE">
+      <Guid>{0002E157-0000-0000-C000-000000000046}</Guid>
+      <VersionMajor>5</VersionMajor>
+      <VersionMinor>3</VersionMinor>
+      <Lcid>0</Lcid>
+      <WrapperTool>primary</WrapperTool>
+      <Isolated>False</Isolated>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </COMReference>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\word\word.csproj">
+      <Project>{56BA33A6-FCC9-40C9-B9B9-49A6E555611D}</Project>
+      <Name>word</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
